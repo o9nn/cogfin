@@ -189,12 +189,17 @@ GnuCash includes an integrated cognitive framework based on OpenCog architecture
 
 ### Components
 
+The cognitive subsystem consists of 7 key components:
+
 | Component | Purpose |
 |-----------|---------|
-| **AtomSpace** | Hypergraph database for knowledge representation |
-| **Pattern Matcher** | Graph query engine for finding patterns |
-| **Cognitive Engine** | GnuCash-specific AI integration |
-| **Truth Values** | Probabilistic reasoning with confidence |
+| **1. Cogutil** | Low-level C++ utilities (thread-safe queues, counters, logging) |
+| **2. AtomSpace** | Hypergraph database for knowledge representation |
+| **3. Pattern** | Graph pattern matching engine for queries |
+| **4. ATen Tensor Lib** | High-performance tensor operations (PyTorch ATen-style) |
+| **5. ATenSpace** | Hybrid symbolic-neural knowledge representation |
+| **6. Tensor Logic** | Multi-entity, multi-scale, network-aware tensor accounting |
+| **7. GnuCog** | GnuCash-specific AI integration (cognitive_engine) |
 
 ### Key Features
 
@@ -203,6 +208,47 @@ GnuCash includes an integrated cognitive framework based on OpenCog architecture
 - **Anomaly Detection**: Flags unusual transactions
 - **Financial Predictions**: Cash flow forecasting
 - **Natural Language Queries**: Ask questions about your finances
+- **Multi-Entity Accounting**: Manage multiple business entities with tensor consolidation
+- **Multi-Scale Analysis**: Analyze finances at different time granularities
+- **Network Flow Analysis**: Understand money flows between accounts as graph networks
+- **Hybrid Symbolic-Neural**: Combine symbolic reasoning with neural embeddings
+
+### ATen Tensor Operations
+
+The ATen library provides efficient tensor operations for financial computations:
+
+```cpp
+#include <opencog/aten/tensor.hpp>
+using namespace gnc::aten;
+
+// Create tensors
+auto balances = DoubleTensor::zeros({12, 5});  // 12 months, 5 accounts
+auto expenses = DoubleTensor({100.0, 200.0, 150.0});
+
+// Operations
+auto total = expenses.sum();
+auto mean = expenses.mean();
+auto normalized = tensor_ops::normalize(expenses);
+```
+
+### Tensor Logic - Multi-Entity Accounting
+
+```cpp
+#include <opencog/tensor-logic/tensor_logic_engine.hpp>
+using namespace gnc::tensor_logic;
+
+auto& engine = tensor_logic_engine();
+engine.initialize();
+
+// Create multi-entity account (3 entities, 12 periods, 1 currency)
+auto account = engine.create_account("guid", "Expenses", 3, 12, 1);
+
+// Consolidate across entities
+auto consolidated = engine.consolidate_entities("guid");
+
+// Analyze money flow network
+auto flow_analysis = engine.analyze_flow_network();
+```
 
 ### Usage Example
 
