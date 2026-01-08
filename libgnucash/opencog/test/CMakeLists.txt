@@ -3,6 +3,9 @@
 set(OPENCOG_TEST_SOURCES
     gtest-atomspace.cpp
     gtest-pattern-match.cpp
+    gtest-aten.cpp
+    gtest-atenspace.cpp
+    gtest-tensor-logic.cpp
     gtest-cognitive-engine.cpp
 )
 

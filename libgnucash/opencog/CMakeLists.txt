@@ -1,15 +1,15 @@
 # CMakeLists.txt for GnuCash OpenCog Cognitive Subsystem
 #
 # This subsystem provides AI-powered financial intelligence based on
-# OpenCog's cognitive architecture, including:
-# - AtomSpace hypergraph database
-# - ATen tensor library for numerical computations
-# - ATenSpace hybrid symbolic-neural knowledge representation
-# - Tensor Logic for multi-entity, multi-scale, network-aware accounting
-# - Pattern matching engine
-# - Probabilistic reasoning
-# - Transaction categorization
-# - Anomaly detection
+# OpenCog's cognitive architecture, including 7 key components:
+#
+# 1. Cogutil        - Low-level C++ utilities (thread-safe queues, counters, logging)
+# 2. AtomSpace      - Hypergraph database for knowledge representation
+# 3. Pattern        - Graph pattern matching engine for queries
+# 4. ATen           - High-performance tensor operations (PyTorch ATen-style)
+# 5. ATenSpace      - Hybrid symbolic-neural knowledge representation
+# 6. Tensor Logic   - Multi-entity, multi-scale, network-aware tensor accounting
+# 7. GnuCog         - GnuCash-specific AI integration (cognitive_engine)
 
 set(OPENCOG_SOURCES
     gnc-cognitive/cognitive_engine.cpp
