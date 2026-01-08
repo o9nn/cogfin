@@ -240,7 +240,8 @@ using namespace gnc::tensor_logic;
 auto& engine = tensor_logic_engine();
 engine.initialize();
 
-// Create multi-entity account (3 entities, 12 periods, 1 currency)
+// Create multi-entity account
+// Parameters: guid, name, num_entities, num_periods, num_currencies
 auto account = engine.create_account("guid", "Expenses", 3, 12, 1);
 
 // Consolidate across entities
