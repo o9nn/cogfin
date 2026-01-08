@@ -195,21 +195,36 @@ Before you start developing GnuCash, you should do the following:
 
 1. Read https://wiki.gnucash.org/wiki/Development
 
-2. Look over the doxygen-generated documentation at
+2. Check the developer guides:
+   - `CLAUDE.md` - AI-assisted development guide
+   - `docs/HACKING` - General hacking guidelines
+   - `docs/REORGANIZATION.md` - Repository structure
+
+3. For CogFin cognitive subsystem development:
+   - See `.github/agents/cogfin-expert.md` for specialized guidance
+   - Read `libgnucash/opencog/README.md` for architecture overview
+
+4. Look over the doxygen-generated documentation at
     https://code.gnucash.org/docs/MASTER/ or
     https://code.gnucash.org/docs/MAINT/
 
-3. Go to the GnuCash website and skim the archives of the GnuCash
+5. Go to the GnuCash website and skim the archives of the GnuCash
    development mailing list.
 
-4. Join the GnuCash development mailing list. See the GnuCash website
+6. Join the GnuCash development mailing list. See the GnuCash website
    for details on how to do this.
 
-5. Build the branch you want from a git clone of our repository and make
+7. Build the branch you want from a git clone of our repository and make
    sure that your build passes all of the tests and runs correctly.
 
 Submitting a Patch:
 
   Please read https://wiki.gnucash.org/wiki/Development#Submitting_Patches.
+
+Repository Organization:
+
+  - `docs/` - Developer documentation (HACKING, AUTHORS, etc.)
+  - `changelogs/` - Historical changelogs (1999-2024)
+  - `.github/agents/` - Expert agent definitions for specialized development
 
 Thank you.
