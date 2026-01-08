@@ -736,38 +736,38 @@ if (COVERAGE)
 endif()
 
 set(gnucash_DOCS
-    AUTHORS
-    ChangeLog.1999
-    ChangeLog.2000
-    ChangeLog.2001
-    ChangeLog.2002
-    ChangeLog.2003
-    ChangeLog.2004
-    ChangeLog.2005
-    ChangeLog.2006
-    ChangeLog.2007
-    ChangeLog.2008
-    ChangeLog.2009
-    ChangeLog.2010
-    ChangeLog.2011
-    ChangeLog.2012
-    ChangeLog.2013
-    ChangeLog.2014
-    ChangeLog.2015
-    ChangeLog.2016
-    ChangeLog.2017
-    ChangeLog.2018
-    ChangeLog.2019
-    ChangeLog.2020
-    ChangeLog.2021
-    ChangeLog.2022
-    ChangeLog.2023
-    ChangeLog.2024
-    DOCUMENTERS
-    HACKING
+    docs/AUTHORS
+    changelogs/ChangeLog.1999
+    changelogs/ChangeLog.2000
+    changelogs/ChangeLog.2001
+    changelogs/ChangeLog.2002
+    changelogs/ChangeLog.2003
+    changelogs/ChangeLog.2004
+    changelogs/ChangeLog.2005
+    changelogs/ChangeLog.2006
+    changelogs/ChangeLog.2007
+    changelogs/ChangeLog.2008
+    changelogs/ChangeLog.2009
+    changelogs/ChangeLog.2010
+    changelogs/ChangeLog.2011
+    changelogs/ChangeLog.2012
+    changelogs/ChangeLog.2013
+    changelogs/ChangeLog.2014
+    changelogs/ChangeLog.2015
+    changelogs/ChangeLog.2016
+    changelogs/ChangeLog.2017
+    changelogs/ChangeLog.2018
+    changelogs/ChangeLog.2019
+    changelogs/ChangeLog.2020
+    changelogs/ChangeLog.2021
+    changelogs/ChangeLog.2022
+    changelogs/ChangeLog.2023
+    changelogs/ChangeLog.2024
+    docs/DOCUMENTERS
+    docs/HACKING
     LICENSE
     NEWS
-    README.dependencies
+    docs/README.dependencies
 )
 
 
@@ -893,7 +893,7 @@ configure_file (${CMAKE_CURRENT_SOURCE_DIR}/common/config.h.cmake.in ${CONFIG_H}
 # The doxygen developer documentation
 find_program(DOXYGEN doxygen)
 if (NOT ${DOXYGEN} STREQUAL "DOXYGEN-NOTFOUND")
-  configure_file(doxygen.cfg.in doxygen.cfg)
+  configure_file(docs/doxygen.cfg.in doxygen.cfg)
   add_custom_target(doc ${DOXYGEN} doxygen.cfg)
 endif()
 
@@ -938,8 +938,8 @@ endif()
 set(DIST_FILE "${PACKAGE_PREFIX}.tar")
 
 set(toplvl_DIST_local ${gnucash_DOCS}
-    doxygen.cfg.in
-    doxygen_main_page.c
+    docs/doxygen.cfg.in
+    docs/doxygen_main_page.c
     CMakeLists.txt
     README)
 
@@ -957,7 +957,7 @@ set_local_dist(toplvl_DIST ${toplvl_DIST_local})
 
 set(ALL_DIST ${bindings_DIST} ${borrowed_DIST} ${cmake_DIST} ${common_DIST} ${data_DIST}
     ${doc_DIST} ${gnucash_DIST} ${libgnucash_DIST} ${packaging_DIST}
-    ${po_DIST} ${test_templates_DIST} ${toplvl_DIST} ${util_DIST} Info.plist)
+    ${po_DIST} ${test_templates_DIST} ${toplvl_DIST} ${util_DIST} data/Info.plist)
 
 
 if (BUILDING_FROM_VCS)
